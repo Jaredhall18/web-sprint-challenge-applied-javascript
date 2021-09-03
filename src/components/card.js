@@ -64,16 +64,14 @@ const cardAppender = (selector) => {
   axios.get(`http://localhost:5000/api/articles`)
     .then(resp => {
       //this is an object with key value pairs, so I need to get the Values out of them
-      const articleData = resp.data.articles;
-      const articleKey = Object.keys(resp.data.articles);
-      console.log(articleData);
-      console.log(articleKey);
+      const {articles} = resp.data;
+      const articleKey = Object.keys(articles)
       const newArticles = [];
       articleKey.forEach(item => {
         const sortedArticles = articles[item]
         Array.prototype.push.apply(newArticles, sortedArticles)
       })
-      console.log(newArticles);
+
       newArticles.forEach(article => {
         const newCard = Card(article)
         entryPointTopic.appendChild(newCard);
