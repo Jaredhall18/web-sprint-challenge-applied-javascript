@@ -1,5 +1,4 @@
-const Tabs = (topics) => {
-  // TASK 3
+ // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
   // As an example, if the topics passed are ['javascript', 'bootstrap', 'technology']
@@ -13,7 +12,22 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
-}
+const Tabs = (topics) => {
+ 
+//Create Elements
+const topicContainer = document.createElement('div');
+
+//assign Class
+topicContainer.classList.add('topics');
+//Create forEach to iterate over each topic and create elements and append them to the container
+topics.forEach( (item) => {
+const newItem = document.createElement('div');
+newItem.classList.add('tab');
+newItem.textContent = item;
+topicContainer.appendChild(newItem);
+});
+return topicContainer;
+};
 
 const tabsAppender = (selector) => {
   // TASK 4

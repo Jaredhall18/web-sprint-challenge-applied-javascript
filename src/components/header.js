@@ -42,7 +42,7 @@ return headerContainer;
   //
 
 const headerAppender = (selector) => {
-  const docHeader = Header("Test", "test", "test");
+  const docHeader = Header("Lambda Times", "October 18, 1991", "100");
   const entryPointHead = document.querySelector(`${selector}`);
   entryPointHead.appendChild(docHeader);
 }
