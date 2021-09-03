@@ -1,5 +1,4 @@
-const Card = (article) => {
-  // TASK 5
+// TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
   // It takes as its only argument an "article" object with `headline`, `authorPhoto` and `authorName` properties.
@@ -17,6 +16,40 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+const Card = (article) => {
+  
+  //Create Elements
+  const cardDiv = document.createElement('div');
+  const headlineContent = document.createElement('div');
+  const authorContainer = document.createElement('div');
+  const authorImgContainer = document.createElement('div');
+  const authorImg = document.createElement('img');
+  const authorContent = document.createElement('span');
+
+  //Assign Classes, and Content
+  cardDiv.classList.add('card');
+  headlineContent.classList.add('headline');
+  headlineContent.textContent = `${headline}`;
+  authorContainer.classList.add('author');
+  authorImgContainer.classList.add("img-container");
+  authorImg.setAttribute('src', authorPhoto);
+  authorContent.textContent = `By ${ authorName}`;
+  
+  //Append and create structure
+  cardDiv.appendChild(headlineContent);
+  cardDiv.appendChild(authorContainer);
+  authorContainer.appendChild(authorImgContainer);
+  authorImgContainer.appendChild(authorImg);
+  authorContainer.appendChild(authorContent);
+  
+  //Create Event Listener
+    // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
+cardDiv.addEventListener('click', () => {
+  console.log(headlineContent);
+});
+
+
+  return cardDiv;
 }
 
 const cardAppender = (selector) => {

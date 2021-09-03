@@ -15,7 +15,7 @@
 import axios from "axios";
 
   //
-const Tabs = ({topics}) => {
+const Tabs = (topics) => {
  
 //Create Elements
 const topicContainer = document.createElement('div');
@@ -47,6 +47,8 @@ const tabsAppender = (selector) => {
     .then(resp => {
       const topicData = resp.data;
       console.log(topicData);
+      const topicDataArray = topicData.keys(topics);
+      console.log(topicDataArray);
       entryPointTopic.appendChild(Tabs(topicData));
     })
     .catch(err => {
