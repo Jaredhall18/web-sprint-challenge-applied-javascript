@@ -77,4 +77,9 @@ An event occurs simply when the user interacts with the page in any way. This co
 An event listener is a callback function tha is attached to a node to look for a an event that has been specified (like if that node is clicked), if the event occurs, then a specified function will run.
 
 4. Why would we convert a NodeList into an Array?
+
+Although NodeLists have access to the .forEach() method, the other Array methods are not available to them. Converting to an array allows these methods to be used.
+
 5. What is a component?
+
+Components are functions in Javascript that allow us to replicate or build new elements based on a set of criteria. This includes the HTML, CSS, and JavaScript that that Element may need.  This helps keep our Code DRY and makes it so you don't need to sift through a lot of code to make changes to an element if it repeats itself. 
