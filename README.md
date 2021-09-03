@@ -65,6 +65,9 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+
+The Dom is the data representation of the objects (called nodes) that make up the structure and content of the document in a browser. It is created in the browser when a page is loaded and it is the blueprint that determines what is actually rendered on the page. 
+
 2. What is an event?
 3. What is an event listener?
 4. Why would we convert a NodeList into an Array?
