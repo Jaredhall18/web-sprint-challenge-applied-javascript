@@ -14,23 +14,22 @@
 
 import axios from "axios";
 
-  //
 const Tabs = (topics) => {
  
-//Create Elements
-const topicContainer = document.createElement('div');
+  //Create Elements
+  const topicContainer = document.createElement('div');
 
-//assign Class
-topicContainer.classList.add('topics');
-//Create forEach to iterate over each topic and create elements and append them to the container
-topics.forEach( (item) => {
-const newItem = document.createElement('div');
-newItem.classList.add('tab');
-newItem.textContent = item;
-topicContainer.appendChild(newItem);
-})
-console.log(topicContainer);
-return topicContainer;
+  //assign Class
+  topicContainer.classList.add('topics');
+  //Create forEach to iterate over each topic and create elements and append them to the container
+  topics.forEach( (item) => {
+    const newItem = document.createElement('div');
+    newItem.classList.add('tab');
+    newItem.textContent = item;
+    topicContainer.appendChild(newItem);
+  })
+  console.log(topicContainer);
+  return topicContainer;
 };
 
 

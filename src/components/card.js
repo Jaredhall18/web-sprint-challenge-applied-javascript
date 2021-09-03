@@ -16,6 +16,7 @@
   //   </div>
   // </div>
   //
+import axios from "axios";
 const Card = (article) => {
   
   //Create Elements
@@ -44,10 +45,9 @@ const Card = (article) => {
   
   //Create Event Listener
     // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
-cardDiv.addEventListener('click', () => {
-  console.log(headlineContent);
-});
-
+  cardDiv.addEventListener('click', () => {
+    console.log(headlineContent);
+  });
 
   return cardDiv;
 }
@@ -60,7 +60,31 @@ cardDiv.addEventListener('click', () => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
 const cardAppender = (selector) => {
-  
+  const entryPointTopic = document.querySelector(`${selector}`);
+  axios.get(`http://localhost:5000/api/articles`)
+    .then(resp => {
+      //this is an object with key value pairs, so I need to get the Values out of them
+      const articleData = resp.data.articles;
+      const articleKey = Object.keys(resp.data.articles);
+      console.log(articleData);
+      console.log(articleKey);
+      const newArticles = [];
+      articleKey.forEach(item => {
+        const sortedArticles = articles[item]
+        Array.prototype.push.apply(newArticles, sortedArticles)
+      })
+      console.log(newArticles);
+      newArticles.forEach(article => {
+        const newCard = Card(article)
+        entryPointTopic.appendChild(newCard);
+      })
+      
+    })
+    .catch(err => {
+      const errorMessage = document.createElement('p');
+      errorMessage.textContent = 'FAILED TO LOAD DATA';
+      entryPointTopic.appendChild(errorMessage);
+    });
 }
 
 export { Card, cardAppender }
