@@ -29,11 +29,11 @@ const Card = (article) => {
   //Assign Classes, and Content
   cardDiv.classList.add('card');
   headlineContent.classList.add('headline');
-  headlineContent.textContent = `${headline}`;
+  headlineContent.textContent = `${article.headline}`;
   authorContainer.classList.add('author');
   authorImgContainer.classList.add("img-container");
-  authorImg.setAttribute('src', authorPhoto);
-  authorContent.textContent = `By ${ authorName}`;
+  authorImg.setAttribute('src', article.authorPhoto);
+  authorContent.textContent = `By ${ article.authorName}`;
   
   //Append and create structure
   cardDiv.appendChild(headlineContent);
@@ -51,9 +51,7 @@ cardDiv.addEventListener('click', () => {
 
   return cardDiv;
 }
-
-const cardAppender = (selector) => {
-  // TASK 6
+// TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
   // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
@@ -61,6 +59,8 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+const cardAppender = (selector) => {
+  
 }
 
 export { Card, cardAppender }

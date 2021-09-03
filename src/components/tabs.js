@@ -45,11 +45,11 @@ const tabsAppender = (selector) => {
   const entryPointTopic = document.querySelector(`${selector}`);
   axios.get(`http://localhost:5000/api/topics`)
     .then(resp => {
-      const topicData = resp.data;
+      const topicData = Tabs(resp.data.topics);
       console.log(topicData);
-      const topicDataArray = topicData.keys(topics);
-      console.log(topicDataArray);
-      entryPointTopic.appendChild(Tabs(topicData));
+      // const topicDataArray = topicData.keys(topics);
+      // console.log(topicDataArray);
+      entryPointTopic.appendChild(topicData);
     })
     .catch(err => {
       const errorMessage = document.createElement('p');
