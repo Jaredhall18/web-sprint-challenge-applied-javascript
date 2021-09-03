@@ -69,6 +69,12 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 The Dom is the data representation of the objects (called nodes) that make up the structure and content of the document in a browser. It is created in the browser when a page is loaded and it is the blueprint that determines what is actually rendered on the page. 
 
 2. What is an event?
+
+An event occurs simply when the user interacts with the page in any way. This could be a click, a keypress on the keyboard, a mousemovement, scrolling. This is all tracked in the browser.
+
 3. What is an event listener?
+
+An event listener is a callback function tha is attached to a node to look for a an event that has been specified (like if that node is clicked), if the event occurs, then a specified function will run.
+
 4. Why would we convert a NodeList into an Array?
 5. What is a component?
